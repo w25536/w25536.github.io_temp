@@ -2,7 +2,7 @@
 layout: page
 title: 
 tagline: Who am I?
-permalink: /about.htmlP
+permalink: /about.html
 typora-copy-images-to: ./images/about
 ---
 
