@@ -1,4 +1,4 @@
 #!/bin/zsh
 git add . 
 git commit -m "add info"
-git push origin gh-pages
+git push origin main
