@@ -4,7 +4,7 @@ title: "torchtext를 활용한 텍스트 데이터 전처리 방법"
 description: "torchtext를 활용한 텍스트 데이터 전처리 방법에 대해 알아보겠습니다."
 headline: "torchtext를 활용한 텍스트 데이터 전처리 방법에 대해 알아보겠습니다."
 categories: pytorch
-tags: [python, 파이썬, torchtext, pytorch, 파이토치, 자연어 처리, 텍스트 전처리, data science, 데이터 분석, 딥러닝, 딥러닝 자격증, 머신러닝, 빅데이터, 테디노트]
+tags: [python, 파이썬, torchtext, pytorch, 파이토치, 전처리, data science, 데이터 분석, 딥러닝, 딥러닝 자격증, 머신러닝, 빅데이터]
 comments: true
 published: true
 typora-copy-images-to: ../images/2023-01-18
