@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 
-tagline: Who am I?
+tagline: Time_line
 permalink: /about.html
 typora-copy-images-to: ./images/about
 ---
