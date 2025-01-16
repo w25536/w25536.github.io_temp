@@ -4,10 +4,10 @@ title: "Docker 활용방법"
 description: "도커에 대해 알아 보겠습니다."
 headline: "도커에 대해 알아 보겠습니다."
 categories: docker
-tags: [python, 파이썬, torchtext, pytorch, 파이토치, 전처리, dat법 science, 데이터 분석, 딥러닝, 딥러닝 자격증, 머신러닝, 빅데이터]
+tags: [python, 파이썬, torchtext, pytorch, 파이토치, 전처리, data science, 데이터 분석, 딥러닝, 딥러닝 자격증, 머신러닝, 빅데이터]
 comments: true
 published: true
-typora-copy-images-to: 
+typora-copy-images-to: /assets/images/docker  # 이미지 경로 지정
 ---
 
 
