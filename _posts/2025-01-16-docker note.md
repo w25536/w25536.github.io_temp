@@ -7,7 +7,7 @@ categories: docker
 tags: [python, 파이썬, torchtext, pytorch, 파이토치, 전처리, data science, 데이터 분석, 딥러닝, 딥러닝 자격증, 머신러닝, 빅데이터]
 comments: true
 published: true
-typora-copy-images-to: /assets/images/docker  # 이미지 경로 지정
+#typora-copy-images-to: /assets/images/docker  # 이미지 경로 지정
 ---
 
 
