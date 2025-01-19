@@ -662,3 +662,7 @@ tags
 
 commit_and_push.sh
 
+create_category.sh
+
+create_post.sh
+
