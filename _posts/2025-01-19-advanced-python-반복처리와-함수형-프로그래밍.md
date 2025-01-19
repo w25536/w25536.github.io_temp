@@ -3,19 +3,7 @@ layout: page
 title: "Advanced Python: 반복처리와 함수형 프로그래밍"
 description: ""
 headline: ""
-tags:
-  - python
-  - 파이썬
-  - 파이토치
-  - 전처리
-  - data
-  - science
-  - 데이터
-  - 분석
-  - 딥러닝
-  - 딥러닝
-  - 머신러닝
-  - 빅데이터
+tags: 
 categories: python
 comments: true
 published: true
