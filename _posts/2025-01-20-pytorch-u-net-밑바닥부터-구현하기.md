@@ -224,8 +224,7 @@ if __name__ == "__main__":
 
 
 
-    
-![[UNet_코드의_사본_6_1.png]]
+![iUNet_코드의_사본_6_1.png]({{site.baseurl}}/images/2025-01-20/UNet_코드의_사본_6_1.png)
     
 
 
