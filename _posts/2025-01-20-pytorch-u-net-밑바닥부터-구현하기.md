@@ -225,7 +225,7 @@ if __name__ == "__main__":
 
 
     
-![png](UNet_%EC%BD%94%EB%93%9C%EC%9D%98_%EC%82%AC%EB%B3%B8_files/UNet_%EC%BD%94%EB%93%9C%EC%9D%98_%EC%82%AC%EB%B3%B8_6_1.png)
+![[UNet_코드의_사본_6_1.png]]
     
 
 
