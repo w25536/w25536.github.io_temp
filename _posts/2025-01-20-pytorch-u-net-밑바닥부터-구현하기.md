@@ -30,10 +30,10 @@ def create_image_with_shapes_and_labels(image_size=(256, 256)):
         torch.Tensor: Label tensor (H, W) with classes 0 (background), 1 (circle), 2 (rectangle).
     """
     image = np.zeros((*image_size, 3), dtype=np.float32)  # Blank RGB image
-    label = np.zeros(image_size, dtype=np.int64)  # Label map
+    label = np.zeros(image_size, dtype=np.int64)  # Label map (H, W)  0: background, 1: circle, 2: rectangle
 
     # Draw a circle
-    rr, cc = disk((64, 64), 40)
+    rr, cc = disk((64, 64), 40) # (64, 64) 중심, 반지름 40
     image[rr, cc, 0] = 1.0  # Red circle
     label[rr, cc] = 1  # Class 1: Circle
 
@@ -45,8 +45,9 @@ def create_image_with_shapes_and_labels(image_size=(256, 256)):
     label[rr, cc] = 2  # Class 2: Rectangle
 
     # Normalize to range [0, 1]
-    image = (image - image.min()) / (image.max() - image.min())
-    return torch.tensor(image).permute(2, 0, 1), torch.tensor(label)  # (C, H, W), (H, W)
+    image = (image - image.min()) / (image.max() - image.min()) # 0~1 사이로 정규화 
+    return torch.tensor(image).permute(2, 0, 1), torch.tensor(label)  # (C, H, W), (H, W) #채널 순서 맞춤
+    #(H, W, C) -> (C, H, W) 바꿔줘야 한다. 
 ```
 
 
@@ -54,12 +55,12 @@ def create_image_with_shapes_and_labels(image_size=(256, 256)):
 # Define a basic double convolution block
 def double_conv(in_channels, out_channels):
     return nn.Sequential(
-        nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1, bias=False),
-        nn.BatchNorm2d(out_channels),
-        nn.ReLU(inplace=True),
-        nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1, bias=False),
-        nn.BatchNorm2d(out_channels),
-        nn.ReLU(inplace=True),
+        nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1, bias=False), # 3x3 커널 사이즈, 패딩 1, 바이어스 없음
+        nn.BatchNorm2d(out_channels), # 배치 정규화 
+        nn.ReLU(inplace=True), # 인플레이스 
+        nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1, bias=False), # 3x3 커널 사이즈, 패딩 1, 바이어스 없음 batch_norm이 적용이 된 경우 bias로 빼준다.      
+        nn.BatchNorm2d(out_channels), # 배치 정규화 
+        nn.ReLU(inplace=True), # 인플레이스 
     )
 ```
 
@@ -80,7 +81,7 @@ class UNet(nn.Module):
         self.bottleneck = double_conv(512, 1024)
 
         # Decoder
-        self.upconv4 = nn.ConvTranspose2d(1024, 512, kernel_size=2, stride=2)
+        self.upconv4 = nn.ConvTranspose2d(1024, 512, kernel_size=2, stride=2) #upsamping 수행후 double_conv 적용
         self.dec4 = double_conv(1024, 512)
 
         self.upconv3 = nn.ConvTranspose2d(512, 256, kernel_size=2, stride=2)
@@ -107,7 +108,7 @@ class UNet(nn.Module):
 
         # Decoder
         dec4 = self.upconv4(bottleneck)
-        dec4 = torch.cat((enc4, dec4), dim=1)
+        dec4 = torch.cat((enc4, dec4), dim=1) 
         dec4 = self.dec4(dec4)
 
         dec3 = self.upconv3(dec4)
@@ -153,7 +154,7 @@ def train_model(model, optimizer, criterion, num_epochs, input_image, ground_tru
 # Visualization of results
 def visualize_results(input_image, output_prediction, ground_truth=None):
     input_image = input_image.squeeze().permute(1, 2, 0).cpu().numpy()  # Convert to HWC
-    output_prediction = torch.argmax(output_prediction, dim=1).squeeze().cpu().numpy()  # Convert to label map
+    output_prediction = torch.argmax(output_prediction, dim=1).squeeze().cpu().numpy()  # Convert to label map ouput prediction dim = 1 채널 원에서 결정되는거다
     if ground_truth is not None:
         ground_truth = ground_truth.cpu().numpy()
 
@@ -226,7 +227,6 @@ if __name__ == "__main__":
 
 ![iUNet_코드의_사본_6_1.png]({{site.baseurl}}/images/2025-01-20/UNet_코드의_사본_6_1.png)
     
-
 
 해당 U-Net은 가장 기본적인 형태를 예시로 든 것이며, 실제 적용 상황에 따라
 * Encoder나 Decoder의 채널 수(64→128→256→512…)를 축소/확장,
