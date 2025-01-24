@@ -43,3 +43,6 @@ U-Net은 쉽게말해 FCN(Fully Convolutional Network)와 Up convolution 층들
 
 
 ![](https://blog.kakaocdn.net/dn/b2PMcQ/btr91zMOZsy/utTa9EY4YRllajvbpDltt0/img.png)
+
+
+
