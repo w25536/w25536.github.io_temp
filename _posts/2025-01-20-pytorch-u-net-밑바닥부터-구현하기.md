@@ -17,7 +17,6 @@ import matplotlib.pyplot as plt
 from skimage.draw import disk, rectangle
 ```
 
-
 ```python
 # Function to generate an image with shapes and labels
 def create_image_with_shapes_and_labels(image_size=(256, 256)):
@@ -50,7 +49,6 @@ def create_image_with_shapes_and_labels(image_size=(256, 256)):
     #(H, W, C) -> (C, H, W) 바꿔줘야 한다. 
 ```
 
-
 ```python
 # Define a basic double convolution block
 def double_conv(in_channels, out_channels):
@@ -63,7 +61,6 @@ def double_conv(in_channels, out_channels):
         nn.ReLU(inplace=True), # 인플레이스 
     )
 ```
-
 
 ```python
 # Define the U-Net model
@@ -128,7 +125,6 @@ class UNet(nn.Module):
         return out
 ```
 
-
 ```python
 # Training loop
 def train_model(model, optimizer, criterion, num_epochs, input_image, ground_truth):
@@ -148,7 +144,6 @@ def train_model(model, optimizer, criterion, num_epochs, input_image, ground_tru
 
     print("Training complete!")
 ```
-
 
 ```python
 # Visualization of results
@@ -176,7 +171,6 @@ def visualize_results(input_image, output_prediction, ground_truth=None):
     plt.tight_layout()
     plt.show()
 ```
-
 
 ```python
 # Example usage
@@ -223,12 +217,10 @@ if __name__ == "__main__":
     Epoch [10/10], Loss: 0.3427
     Training complete!
 
-
-
 ![iUNet_코드의_사본_6_1.png]({{site.baseurl}}/images/2025-01-20/UNet_코드의_사본_6_1.png)
-    
 
 해당 U-Net은 가장 기본적인 형태를 예시로 든 것이며, 실제 적용 상황에 따라
+
 * Encoder나 Decoder의 채널 수(64→128→256→512…)를 축소/확장,
 * Dropout이나 Residual Block을 추가,
 * Attention Mechanism(Attention U-Net) 또는 Dense Skip(UNet++)

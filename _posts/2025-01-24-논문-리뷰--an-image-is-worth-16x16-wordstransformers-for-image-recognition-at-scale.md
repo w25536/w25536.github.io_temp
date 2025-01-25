@@ -47,3 +47,29 @@ Transformer의 특징
       - JFT-300M 사전 학습 후, Transfer Learning → CNN구조 보다 매우 좋은 성능 달성(SOTA)
 
       - Transformer는 inductive biases가 없음 = Locality와 Translation Equivariance 같은 CNN의 특성이 없음
+
+Downstream 이란 무엇인가 예측 하는ㄷ
+
+positonal encoding
+
+0실게 16 by 16 나눈다 flatten 시켜서
+
+embeding vector가 되고
+
+정수로 postional encoding을 진행
+
+class token이 쓰여진 이유 ?
+
+분류 task이니까 정답을 같이 준거고
+
+0에서는 클래스 토큰이다.
+
+그 클래스 정보를 어덯게 학습 하나?
+
+64 차원을 학읍 하고 vitT에서 어떻게 학습 되는?
+
+MLP clas
+
+clasification token 만쓴다.
+
+BERT 모델

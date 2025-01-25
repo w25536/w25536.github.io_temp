@@ -8,9 +8,7 @@ categories: python
 comments: true
 published: true
 ---
-##1. 반복 처리의 기초 개념
-
-
+## 1. 반복 처리의 기초 개념
 
 ### Iterable과 Iterator 예시 (Iterable 객체: 반복가능한 객체, Iterator 객체: 값을 순차적으로 반환하는 객체)
 
@@ -21,7 +19,6 @@ Iterator
 
 iter() 함수로 반복 가능한 객체를 Iterator로 변환합니다.
 next()를 호출할 때마다 다음 값을 반환하며, 더 이상 반환할 값이 없으면 StopIteration 예외를 발생시킵니다.
-
 
 ```python
 class CustomIterable:
@@ -53,7 +50,6 @@ for value in custom_iterable:
     3
     4
 
-
 ### Generator 예시
 
 정의: Generator는 함수 안에 yield 키워드를 사용해 값을 반환하는 함수로, 자동으로 Iterator를 생성합니다.
@@ -62,7 +58,6 @@ for value in custom_iterable:
 
 yield는 함수 실행을 중단하고 값을 반환하며, 이후 호출 시 중단된 지점부터 실행을 재개합니다.
 next()를 통해 값을 하나씩 반환하며, 마지막 값을 반환한 후에는 StopIteration 예외를 발생시킵니다.
-
 
 ```python
 def countdown(start):
@@ -82,7 +77,6 @@ for value in countdown(5):
     1
     Liftoff!
 
-
 ## 2. 메모리 효율적 반복 처리
 
 ### Lazy Evaluation과 Generator 표현식 예시
@@ -90,7 +84,6 @@ for value in countdown(5):
 Lazy Evaluation은 필요한 시점에 값을 계산하는 전략입니다.
 데이터를 미리 생성하거나 계산하지 않고, 값이 실제로 요구될 때 계산을 수행하여 리소스를 효율적으로 사용합니다.
 이 방식은 메모리와 처리 시간을 절약하는 데 유용합니다.
-
 
 ```python
 import sys
@@ -124,13 +117,11 @@ for value in generator_expression:
     81
     100
 
-
 ## 3.데이터 변환 및 필터링
 
 ### Comprehensions 예시
 
 Comprehensions는 Python에서 반복(iteration)을 사용해 간결하게 새로운 데이터를 생성하는 문법입니다. 일반적으로 리스트, 딕셔너리, 세트 등을 만들 때 사용되며, 가독성이 좋고 간결한 코드 작성을 도와줍니다.
-
 
 ```python
 # 리스트 컴프리헨션을 사용하여 짝수만 필터링하고 제곱 계산
@@ -151,13 +142,11 @@ print(f"Unique squares: {unique_squares}")
     Word lengths: {'apple': 5, 'banana': 6, 'cherry': 6, 'date': 4}
     Unique squares: {1, 4, 9, 16, 25}
 
-
 ### map(), filter(), reduce() 함수 예시
 
 - map()은 함수를 반복 가능한 객체(리스트, 튜플 등)의 모든 요소에 적용하고, 그 결과를 새로운 map 객체로 반환합니다.
 - filter()는 조건을 만족하는 요소만 추출해 새로운 filter 객체로 반환합니다.
 - reduce()는 주어진 함수로 반복 가능한 객체의 모든 요소를 누적 연산해 단일 값으로 반환합니다.
-
 
 ```python
 from functools import reduce
@@ -177,7 +166,6 @@ print(f"Sum of numbers: {sum_numbers}")
     Even numbers: [2, 4]
     Sum of numbers: 15
 
-
 ## 4. 함수형 프로그래밍 기법
 
 ### 람다 함수와 고차 함수 예시
@@ -185,7 +173,6 @@ print(f"Sum of numbers: {sum_numbers}")
 - 람다 함수는 Python에서 lambda 키워드를 사용해 작성하는 익명 함수입니다. 이름 없이 일시적으로 사용되며, 간단한 함수를 정의할 때 유용합니다.
 - 고차 함수는 다른 함수를 인자로 받거나, 함수를 반환하는 함수를 말합니다.
 함수가 일급 객체(First-Class Object)로 취급되는 언어에서 사용 가능하며, Python은 이에 해당합니다.
-
 
 ```python
 # 리스트를 정렬하면서 람다 함수 사용하기
@@ -204,7 +191,6 @@ print(f"Squared numbers: {squared_numbers}")
     Sorted pairs by second element: [(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]
     Squared numbers: [1, 4, 9, 16, 25]
 
-
 ## 5. 자원 관리와 코드 개선 기법
 
 ### Context Manager (with 문) 예시
@@ -212,7 +198,6 @@ print(f"Squared numbers: {squared_numbers}")
 Context Manager는 리소스를 열고 닫는 작업(예: 파일, 데이터베이스 연결 등)을 효율적으로 관리하고, 코드의 가독성을 높여주는 Python의 기능입니다.
 
 Context Manager는 with 문을 사용하여 구현되며, 특정 작업을 실행하기 전후에 필요한 초기화와 정리(clean-up) 작업을 자동으로 수행합니다.
-
 
 ```python
 class ManagedFile:
@@ -235,11 +220,9 @@ with ManagedFile('example.txt') as f:
     Opening file example.txt
     Closing file example.txt
 
-
 ### Decorator (데코레이터) 예시
 
 데코레이터는 함수를 꾸며주는 함수로, 기존 함수나 메서드의 동작을 수정하거나 확장할 때 사용됩니다. 데코레이터는 다른 함수를 감싸는 래퍼(wrapper) 함수로 동작하며, Python에서 @ 기호로 간단히 적용할 수 있습니다.
-
 
 ```python
 import time
@@ -267,15 +250,13 @@ slow_function()
     Function finished
     Function slow_function took 2.0002 seconds to complete
 
-
 ## 6. 반복 관련 고급 모듈
 
 ### Itertools 모듈 예시
 
-Python의 **itertools**는 반복 가능한(iterable) 데이터 처리에 유용한 함수들을 제공하는 표준 라이브러리입니다. 주로 메모리를 효율적으로 사용하면서 반복 작업을 수행할 수 있는 도구를 제공합니다.
+Python의 __itertools__는 반복 가능한(iterable) 데이터 처리에 유용한 함수들을 제공하는 표준 라이브러리입니다. 주로 메모리를 효율적으로 사용하면서 반복 작업을 수행할 수 있는 도구를 제공합니다.
 
 itertools는 다양한 조합, 순열, Cartesian 곱, 그리고 무한 반복 생성 등을 지원하며, 큰 데이터셋을 처리하거나 반복 작업을 간결하고 효율적으로 구현할 때 유용합니다.
-
 
 ```python
 import itertools
