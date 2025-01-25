@@ -12,41 +12,80 @@ published: true
 
 <https://iy322.tistory.com/66>
 
-이전 Vision Task에서 Self-Attention적용의 한계
-      - Self-Attention을 적용하는 시도는 있었으나, Hardware Accelerators에 비효율적
+Vision Transformer (ViT)의 계산 과정을 자세히 설명하겠습니다.
 
-          → ResNet구조가 SOTA였음
+## 입력 이미지 처리
 
-     ▶ 기존의 Transformer를 최대한 그대로 적용하고자 함
+1. 이미지 패치화:
 
-Attention is All you Need
-      - NLP에서 가장 대표적인 구조 "Self-Attention"를 활용한 Transformer
+    - 입력 이미지 (H x W x C)를 N개의 패치로 분할합니다[1](https://hyundoil.tistory.com/334).
+    - 각 패치의 크기는 (P x P x C)입니다[2](https://devocean.sk.com/blog/techBoardDetail.do?ID=166868&boardType=techBlog).
+    - 예: 224x224x3 이미지를 16x16 패치로 나누면 14x14=196개의 패치가 생성됩니다[5](https://velog.io/@leehyuna/Vision-TransformerViT).
 
-      - 대표 모델 "BERT"는 Large Dataset(Corpus)를 사전학습(Pre-Train) → 작은 Task에서 미세조정(Fine-Tune) 
+2. 패치 임베딩:
 
-Transformer의 장점
-      - Transfoerm의 계산 효율성(Efficiency) 및 확장성(Scalability)
+    - 각 패치를 1차원 벡터로 평탄화(flatten)합니다[1](https://hyundoil.tistory.com/334).
+    - 평탄화된 벡터에 선형 변환을 적용하여 D 차원의 임베딩 벡터로 변환합니다[2](https://devocean.sk.com/blog/techBoardDetail.do?ID=166868&boardType=techBlog).
+    - 예: 16x16x3=768 차원의 벡터를 D 차원으로 변환합니다[5](https://velog.io/@leehyuna/Vision-TransformerViT).
 
-      - 100B Parameter도 학습 가능!
+3. 위치 임베딩 추가:
 
-      - 데이터셋이 크면 클수록 모델을 키워도 되며, 성능이 포화(Saturate)될 징후 X
-      - 더 키우면 키울수록 더 성능은 높아질 것임!
+    - 학습 가능한 1D 위치 임베딩을 각 패치 임베딩에 더합니다[5](https://velog.io/@leehyuna/Vision-TransformerViT).
+    - 위치 임베딩의 크기는 (N+1) x D입니다 (클래스 토큰 포함)[5](https://velog.io/@leehyuna/Vision-TransformerViT).
 
-Transformer의 적용 방안
-      - 이미지를 Patch로 분할 후 Sequence로 입력
+4. 클래스 토큰 추가:
 
-        → NLP에서 단어(Word)가  입력되는 방식과 동일! ( ∵ 논문 제목이 "IMAGE IS WORTH 16X16 WORDS"인 이유)
+    - 학습 가능한 클래스 토큰을 패치 임베딩 시퀀스의 맨 앞에 추가합니다[5](https://velog.io/@leehyuna/Vision-TransformerViT).
 
-      - Supervised Learning 방식으로 학습
+## Transformer 인코더 처리
 
-Transformer의 특징
-      - ImageNet와 같은 Mid-sized 데이터셋으로 학습 시, ResNet보다 낮은 성능을 보임
+5. 레이어 정규화 (Layer Normalization):
 
-        ( * ImageNet은.. 더 이상 큰 데이터셋이 아니다..)
+    - 입력 시퀀스에 레이어 정규화를 적용합니다[5](https://velog.io/@leehyuna/Vision-TransformerViT).
 
-      - JFT-300M 사전 학습 후, Transfer Learning → CNN구조 보다 매우 좋은 성능 달성(SOTA)
+6. 멀티헤드 셀프 어텐션 (Multi-Head Self-Attention, MSA):
 
-      - Transformer는 inductive biases가 없음 = Locality와 Translation Equivariance 같은 CNN의 특성이 없음
+    - 정규화된 입력을 Query, Key, Value로 변환합니다[2](https://devocean.sk.com/blog/techBoardDetail.do?ID=166868&boardType=techBlog).
+    - 각 헤드에서 어텐션 스코어를 계산: A = softmax(QK^T / √d)[2](https://devocean.sk.com/blog/techBoardDetail.do?ID=166868&boardType=techBlog).
+    - 어텐션 스코어와 Value를 곱하여 컨텍스트 벡터를 생성합니다[2](https://devocean.sk.com/blog/techBoardDetail.do?ID=166868&boardType=techBlog).
+    - 모든 헤드의 결과를 연결하고 선형 변환을 적용합니다[2](https://devocean.sk.com/blog/techBoardDetail.do?ID=166868&boardType=techBlog).
+
+7. 잔차 연결 (Residual Connection):
+
+    - MSA의 출력을 입력과 더합니다[5](https://velog.io/@leehyuna/Vision-TransformerViT).
+
+8. 레이어 정규화:
+
+    - 잔차 연결의 결과에 다시 레이어 정규화를 적용합니다[5](https://velog.io/@leehyuna/Vision-TransformerViT).
+
+9. MLP (Multi-Layer Perceptron):
+
+    - 정규화된 결과를 MLP에 통과시킵니다[5](https://velog.io/@leehyuna/Vision-TransformerViT).
+    - MLP는 일반적으로 두 개의 선형 레이어와 GELU 활성화 함수로 구성됩니다.
+
+10. 잔차 연결:
+
+    - MLP의 출력을 이전 단계의 입력과 더합니다[5](https://velog.io/@leehyuna/Vision-TransformerViT).
+
+11. 반복:
+
+    - 5-10 단계를 L번 반복합니다 (L은 Transformer 블록의 수)[5](https://velog.io/@leehyuna/Vision-TransformerViT).
+
+## 분류 헤드
+
+12. 최종 레이어 정규화:
+
+    - 마지막 Transformer 블록의 출력을 정규화합니다[5](https://velog.io/@leehyuna/Vision-TransformerViT).
+
+13. 클래스 토큰 추출:
+
+    - 정규화된 출력에서 클래스 토큰에 해당하는 벡터를 추출합니다[5](https://velog.io/@leehyuna/Vision-TransformerViT).
+
+14. 분류:
+
+    - 추출된 클래스 토큰 벡터를 선형 레이어에 통과시켜 최종 분류 결과를 얻습니다[5](https://velog.io/@leehyuna/Vision-TransformerViT).
+
+이 과정을 통해 ViT는 이미지를 패치 단위로 처리하고, Transformer 구조를 사용하여 전역적인 관계를 학습하며, 최종적으로 이미지 분류를 수행합니다.
 
 Downstream 이란 무엇인가 예측 하는ㄷ
 
