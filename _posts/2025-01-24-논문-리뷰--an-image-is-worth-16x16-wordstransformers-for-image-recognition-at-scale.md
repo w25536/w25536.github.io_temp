@@ -14,7 +14,7 @@ published: true
 
 Vision Transformer (ViT)의 계산 과정을 자세히 설명하겠습니다.
 
-## 입력 이미지 처리
+## 입력 이미지 처리 (Z_0)
 
 1. 이미지 패치화:
 
