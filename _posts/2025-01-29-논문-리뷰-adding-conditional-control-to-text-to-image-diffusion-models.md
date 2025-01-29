@@ -86,16 +86,31 @@ trainable copy  전달 할때 noise가 있을때 condition이 망가 질수 있�
 
 
 
-$$ \begin{aligned}&y=w x+b\\&\partial y / \partial w=x, \partial y / \partial x=w, \partial y / \partial b=1\\&\text { if } w=0 \text { and } x \neq 0\\& \partial y / \partial w \neq 0, \partial y / \partial x=0, \partial y / \partial b \neq 0\end{aligned}$$
+$$ 
+\begin{aligned}&y=w x+b\\&\partial y / \partial w=x, \partial y / \partial x=w, \partial y / \partial b=1\\&\text { if } w=0 \text { and } x \neq 0\\& \partial y / \partial w \neq 0, \partial y / \partial x=0, \partial y / \partial b \neq 0\end{aligned}
+$$
 
 
-$(".latex").latex();
 
-```latex
-<div class="latex">  
-	\begin{aligned}&y=w x+b\\&\partial y / \partial w=x, \partial y / \partial x=w, \partial y / \partial b=1\\&\text { if } w=0 \text { and } x \neq 0\\& \partial y / \partial w \neq 0, \partial y / \partial x=0, \partial y / \partial b \neq 0\end{aligned}  
-</div>
-```
+
+## First Training Step 
+
+
+
+
+
+
+$$
+y_c=\mathcal{F}(x ; \Theta)+\mathcal{Z}\left(\mathcal{F}\left(x+\mathcal{Z}\left(c ; \Theta_{z 1}\right) ; \Theta_c\right) ; \Theta_{z 2}\right)
+$$
+
+
+
+
+$$
+\begin{aligned}& \frac{\partial \mathcal{Z}(I ;\{W, B\})_{p, i}}{\partial B_i}=1 \\& \frac{\partial \mathcal{Z}(I ;\{W, B\})_{p, i}}{\partial I_{p, i}}=\sum_j^c W_{i, j}=0 \\& \frac{\partial \mathcal{Z}(I ;\{W, B\})_{p, i}}{\partial W_{i, j}}=I_{p, i} \neq 0\end{aligned}
+$$
+
 
 
 
