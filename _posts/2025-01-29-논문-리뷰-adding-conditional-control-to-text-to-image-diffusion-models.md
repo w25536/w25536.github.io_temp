@@ -75,7 +75,7 @@ published: true
 ## 다음으로 식을 이해해 보자, 
 
 
-![](https://cdn.mathpix.com/snip/images/17_LDq4pTZ2fpfQ9pDBy_g9RkQBLTXSP_ovGyEN1Fi4.original.fullsize.png)
+![| center | 200](https://cdn.mathpix.com/snip/images/17_LDq4pTZ2fpfQ9pDBy_g9RkQBLTXSP_ovGyEN1Fi4.original.fullsize.png)
 
 
 
@@ -95,6 +95,8 @@ $$
 
 ![](https://cdn.mathpix.com/snip/images/QTON_AlO7DZSwYEf-jhaOc1sX-6WmXrA4qCdjB2TwAs.original.fullsize.png )
 
+
+<div align="center"> <img src="https://cdn.mathpix.com/snip/images/QTON_AlO7DZSwYEf-jhaOc1sX-6WmXrA4qCdjB2TwAs.original.fullsize.png" alt="center" width="400" /> </div>
 
 
 
@@ -148,13 +150,13 @@ $$
 $$
 
 ### iii) Proof of not equal zero
+
 $$
 \mathcal{Z}(\boldsymbol{I} ;\{\boldsymbol{W}, \boldsymbol{B}\})_{p, i}=\boldsymbol{B}_i+\sum_j^c \boldsymbol{I}_{p, i} \boldsymbol{W}_{i, j} \quad\left\{\begin{array}{l}
 \frac{\partial \mathcal{Z}(\boldsymbol{I} ;\{\boldsymbol{W}, \boldsymbol{B}\})_{p, i}}{\partial \boldsymbol{B}_i}=1 \\
 \frac{\partial \mathcal{Z}(\boldsymbol{I} ;\{\boldsymbol{W}, \boldsymbol{B}\})_{p, i}}{\partial \boldsymbol{I}_{p, i}}=\sum_j^c \boldsymbol{W}_{i, j}=0 \\
 \frac{\partial \mathcal{Z}(\boldsymbol{I} ;\{\boldsymbol{W}, \boldsymbol{B}\})_{p, i}}{\partial \boldsymbol{W}_{i, j}}=\boldsymbol{I}_{p, i} \neq \mathbf{0}
 \end{array}\right.
-
 $$
 
 
