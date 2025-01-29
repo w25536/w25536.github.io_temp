@@ -23,29 +23,59 @@ published: true
 
 ---
 
-## Introduction[#1]
-
-![](https://blog.kakaocdn.net/dn/ln8IQ/btsEIQRkTSQ/Yy55WaOa3nbel7NPf7Dvuk/img.png)
+## LDM (Stable Diffusion) Structure[#1]
 
 
-
-****
+![](https://cdn.mathpix.com/snip/images/g6wV3-r-LChmmQjW3RwFd5Xu3Ti1qGblKFbk-ZYaKzM.original.fullsize.png)
 
 
 
+- 기존 Stable Diffusion LDM에서 컨디셔닝을 어떻게 처리하는지 살펴보겠음.
+- 일단, 다양한 방법중에 널리 알려진 기능 텍스트(프롬프트)를 통한 Text-to-Image 생성
+- Image-to-Image 변환 방식에 존재 
+- ControlNet 방법이 쉬우면서도  근본적인 문제를 극복 할 수 있는 모델이라고 필자는 설명
+- 
 
-![|500](https://cdn.mathpix.com/snip/images/aeQ-JeO49FpMEchGu-fnYzXrQavqmme9HKdT8nOODdo.original.fullsize.png)
 
 
-ControlNet은 정말 간단한 적용만으로도, 쉽게 diffusion network를 통제할 수 있도록 설계했다.
+![](https://cdn.mathpix.com/snip/images/VoYPN658c6bfbc-MWSrbW9Y-vBzRtfQOaa-LmB7KdLc.original.fullsize.png)
 
-바로 위의 그림처럼, network를 기준으로, 아래 2개의 개념을 적용한다.
+-  한마디로 위그림처럼 x의 feature를 받아서 y라는 출력값을 생성할 때, ControlNet 모듈의 컨디션 c를 추가로 고려하여 최종적으로 y 값을 내도록 유도
 
-**1. zero-convolution**
 
-**2. trainable copy**
+![](https://cdn.mathpix.com/snip/images/2iNLaVfzFVsBGPqYS-NgQp6GYM7n2VpgYNNjT4v2qAU.original.fullsize.png)
+
+> [!NOTE]
+> Control pretrained large diffusion models to support additional input conditions
+> 
+
+
+- 위 이미지를 조금더 구체적으로 이해해보면 "pretrained larged diffusion models" 가져와 활용함
+-  Training을 시킬때 frozen 을 시켜서 기존의 large 모델에 장점을 최대한 살리고
+- 추가적인 c 컨디션을 붙여 다른 모델도 함께 학습하는 방식으로 기존 대형 모델의 장점을 최대한 살린다고 설명 한다
+- ControlNet은 정말 간단한 적용만으로도, 쉽게 diffusion network를 통제할 수 있도록 설계되어 있음. 
+
+바로 위의 그림처럼, network를 기준으로, 아래 2개의 개념을 적용
+
+1. zero-convolution
+2. trainable copy
 
 각각이 무엇인지 한번 살펴보자.
+
+
+
+첫번째 부터  zero convolution layer 통과할때 
+- weight bias모두 zero 로 intiailize 된 1x1 conv layer
+- 학습이 진행되면서 최적화된 파라미터를 가질 수 있고  
+- 왜 weight와 bias 를 모두 0를 초기화 하는 이유는 
+- 아래에 이미지 확인 할 수 있다. 
+
+
+![](https://cdn.mathpix.com/snip/images/48hMZkKzpNTRI-p5QMDH1s6gPNbupxDRMJr0a940aqE.original.fullsize.png)
+
+
+![](https://cdn.mathpix.com/snip/images/AELbV6cfab3P5IsRuAgEwCEcWc5o17VRhw3qpQHKogM.original.fullsize.png)
+
 
 
 먼저 trainable copy가 무엇인지 정의를 하고 가자.
@@ -53,6 +83,7 @@ ControlNet은 정말 간단한 적용만으로도, 쉽게 diffusion network를 �
 기존의 input feature map X와 layer에 해당하는 파라미터 Θ가 있다고 하고, 이를 함수 F로 표현하자.
 
 그렇다면, trainable copy는 함수 F에 해당하는 구조와 파라미터 Θ를 그대로 복제한 layer 이다.
+
 
 
 
@@ -119,7 +150,7 @@ Zero convolution layer의 가중치와 바이어스는 모두 0으로 초기화�
 i) 각각의 component로 편미분 했을때 weight가 0여도 편미분한 값이 0이 아니기 때문에 $W^*$ 값이 0이 아닌수로 값이 바뀌게 된다. 
 
 
-## i) 
+### i)  Foward pass:
 
 
 $$
@@ -130,6 +161,9 @@ $$
 \end{array}\right.
 
 $$
+
+
+
 
 ### ii)
 $$
