@@ -80,7 +80,7 @@ trainable copy  전달 할때 noise가 있을때 condition이 망가 질수 있�
 
 
 
-![](https://cdn.mathpix.com/snip/images/QTON_AlO7DZSwYEf-jhaOc1sX-6WmXrA4qCdjB2TwAs.original.fullsize.png)
+![](https://cdn.mathpix.com/snip/images/QTON_AlO7DZSwYEf-jhaOc1sX-6WmXrA4qCdjB2TwAs.original.fullsize.png )
 
 
 
@@ -89,11 +89,12 @@ trainable copy  전달 할때 noise가 있을때 condition이 망가 질수 있�
 $$ \begin{aligned}&y=w x+b\\&\partial y / \partial w=x, \partial y / \partial x=w, \partial y / \partial b=1\\&\text { if } w=0 \text { and } x \neq 0\\& \partial y / \partial w \neq 0, \partial y / \partial x=0, \partial y / \partial b \neq 0\end{aligned}$$
 
 
-
+$(".latex").latex();
 
 ```latex
 <div class="latex">  
 	\begin{aligned}&y=w x+b\\&\partial y / \partial w=x, \partial y / \partial x=w, \partial y / \partial b=1\\&\text { if } w=0 \text { and } x \neq 0\\& \partial y / \partial w \neq 0, \partial y / \partial x=0, \partial y / \partial b \neq 0\end{aligned}  
 </div>
 ```
+
 
