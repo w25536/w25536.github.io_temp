@@ -118,18 +118,29 @@ $$
 
 
 
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Af9z0LZ4d3b8GqE8w5F5O1+fT0B5v5O5i7u7VuFzI5l5l5v4l5z5v5l5N5l5l5A5"> <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-Q0d4Y4+0f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4f4"> </script> <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity="sha384-Af9z0LZ4d3b8GqE8w5F5O1+fT0B5v5O5i7u7VuFzI5l5l5v4l5z5v5l5N5l5l5A5"> </script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    renderMathInElement(document.body, {
-      delimiters: [
-        {left: "$$", right: "$$", display: true},
-        {left: "$", right: "$", display: false}
-      ]
-    });
-  });
+<style type="text/css">
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // 'code' 항목 제거
+    },
+    "HTML-CSS": {
+        availableFonts: ["TeX"]
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js"]
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
 </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+
