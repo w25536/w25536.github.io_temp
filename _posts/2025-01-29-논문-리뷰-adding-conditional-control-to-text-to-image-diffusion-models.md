@@ -12,13 +12,13 @@ published: true
 
 ## **Contents**
 
-**[1. Simple Introduction](#1)**
+[1. Simple Introduction](#1)
 
-**[2. Background Knowledge: Diffusion](https://kyujinpy.tistory.com/128#background)**
+[2. Background Knowledge: Diffusion]()
 
-**[3. Method](https://kyujinpy.tistory.com/128#method)**
+[3. Method]()
 
-**[4. Result](https://kyujinpy.tistory.com/128#result)**
+[4. Result]()
 
 
 ---
@@ -30,6 +30,11 @@ published: true
 
 
 ****
+
+
+
+
+![|500](https://cdn.mathpix.com/snip/images/aeQ-JeO49FpMEchGu-fnYzXrQavqmme9HKdT8nOODdo.original.fullsize.png)
 
 
 ControlNet은 정말 간단한 적용만으로도, 쉽게 diffusion network를 통제할 수 있도록 설계했다.
@@ -80,11 +85,14 @@ trainable copy  전달 할때 noise가 있을때 condition이 망가 질수 있�
 
 
 
-![](https://cdn.mathpix.com/snip/images/QTON_AlO7DZSwYEf-jhaOc1sX-6WmXrA4qCdjB2TwAs.original.fullsize.png )
+
 
 
 초기 학습에서 random noise를 제거하여서 학습이 올바른 방향으로 진행될 수 있도록 유도하였다고 설명하고 있다.
 
+
+
+![](https://cdn.mathpix.com/snip/images/17_LDq4pTZ2fpfQ9pDBy_g9RkQBLTXSP_ovGyEN1Fi4.original.fullsize.png)
 
 $$ 
 \begin{aligned}&y=w x+b\\&\partial y / \partial w=x, \partial y / \partial x=w, \partial y / \partial b=1\\&\text { if } w=0 \text { and } x \neq 0\\& \partial y / \partial w \neq 0, \partial y / \partial x=0, \partial y / \partial b \neq 0\end{aligned}
@@ -93,10 +101,10 @@ $$
 
 
 
+![](https://cdn.mathpix.com/snip/images/QTON_AlO7DZSwYEf-jhaOc1sX-6WmXrA4qCdjB2TwAs.original.fullsize.png )
+
+
 ## First Training Step 
-
-
-
 
 
 
@@ -108,13 +116,25 @@ $$
 Zero convolution layer의 가중치와 바이어스는 모두 0으로 초기화되기 때문에, 첫 번째 학습 step에서 다음과 같다.
 
 
+i) 각각의 component로 편미분 했을때 weight가 0여도 편미분한 값이 0이 아니기 때문에 $W^*$ 값이 0이 아닌수로 값이 바뀌게 된다. 
+
+
+## i) 
+
 
 $$
-\begin{aligned}& \frac{\partial \mathcal{Z}(I ;\{W, B\})_{p, i}}{\partial B_i}=1 \\& \frac{\partial \mathcal{Z}(I ;\{W, B\})_{p, i}}{\partial I_{p, i}}=\sum_j^c W_{i, j}=0 \\& \frac{\partial \mathcal{Z}(I ;\{W, B\})_{p, i}}{\partial W_{i, j}}=I_{p, i} \neq 0\end{aligned}
+\mathcal{Z}(\boldsymbol{I} ;\{\boldsymbol{W}, \boldsymbol{B}\})_{p, i}=\boldsymbol{B}_i+\sum_j^c \boldsymbol{I}_{p, i} \boldsymbol{W}_{i, j} \quad\left\{\begin{array}{l}
+\frac{\partial \mathcal{Z}(\boldsymbol{I} ;\{\boldsymbol{W}, \boldsymbol{B}\})_{p, i}}{\partial \boldsymbol{B}_i}=1 \\
+\frac{\partial \mathcal{Z}(\boldsymbol{I} ;\{\boldsymbol{W}, \boldsymbol{B}\})_{p, i}}{\partial \boldsymbol{I}_{p, i}}=\sum_j^c \boldsymbol{W}_{i, j}=0 \\
+\frac{\partial \mathcal{Z}(\boldsymbol{I} ;\{\boldsymbol{W}, \boldsymbol{B}\})_{p, i}}{\partial \boldsymbol{W}_{i, j}}=\boldsymbol{I}_{p, i} \neq \mathbf{0}
+\end{array}\right.
+
 $$
 
-
-
+### ii)
+$$
+W^*=W-\beta_{\mathrm{lr}} \cdot \frac{\partial \mathcal{L}}{\partial \mathcal{Z}(I ;\{W, B\})} \odot \frac{\partial \mathcal{Z}(I ;\{W, B\})}{\partial W} \neq 0
+$$
 
 
 
@@ -142,5 +162,4 @@ MathJax.Hub.Queue(function() {
 });
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML-full"></script>
-
 
