@@ -13,13 +13,13 @@ published: true
 이 노트북은 **Vision Transformer(ViT)** 논문 구조를 간략히 구현하고, `pizza_steak_sushi` 데이터셋을 이용해 분류 문제를 학습합니다.
 
 ## 진행 순서
+
 1. **환경 설정** 및 필요한 함수 다운로드
 2. **데이터 다운로드** (`pizza_steak_sushi`)
 3. **Dataset & DataLoader** 만들기
 4. **ViT 모델 구현** (Patch Embedding, MSA, MLP, Transformer Encoders)
 5. **학습 루프** 정의
 6. **학습 실행** 및 결과 확인
-
 
 ```python
 %%capture
@@ -41,7 +41,6 @@ except ImportError:
 
 아래 셀을 통해 **PyTorch**와 **TorchVision**이 설치되었는지 확인하고, GPU를 사용 가능한지 체크합니다.
 
-
 ```python
 import torch
 import torchvision
@@ -57,7 +56,6 @@ print("[INFO] Device:", device)
     [INFO] PyTorch version: 2.5.1+cpu
     [INFO] TorchVision version: 0.20.1+cpu
     [INFO] Device: cpu
-
 
 ## 2. 데이터 다운로드
 
@@ -77,8 +75,6 @@ pizza_steak_sushi/
     └── sushi/
 ```
 
-
-
 ```python
 from helper_functions import download_data
 image_path = download_data(
@@ -93,7 +89,6 @@ print("[INFO] Data downloaded to:", image_path)
     [INFO] Unzipping pizza_steak_sushi.zip data...
     [INFO] Data downloaded to: data/pizza_steak_sushi
 
-
 ## 3. 데이터셋 / 데이터로더 생성
 
 파이토치의 [**ImageFolder**](https://pytorch.org/vision/stable/generated/torchvision.datasets.ImageFolder.html) 클래스를 사용해 이미지 폴더 구조를 **Dataset**으로 만들고, 이를 **DataLoader**로 감싸 학습에 활용합니다.
@@ -101,8 +96,6 @@ print("[INFO] Data downloaded to:", image_path)
 - **변환(Transform)**: 이미지를 $(224, 224)$ 사이즈로 리사이즈, 텐서 형태로 변환
 - **배치 크기**: 32
 - **shuffle=True** (학습용)
-
-
 
 ```python
 import os
@@ -146,7 +139,6 @@ print(f"[INFO] Total classes: {len(class_names)}")
     [INFO] Class Names: ['pizza', 'steak', 'sushi']
     [INFO] Total classes: 3
 
-
 ## 4. Vision Transformer 구현
 
 아래 단계로 **ViT**를 구성합니다:
@@ -171,7 +163,6 @@ print(f"[INFO] Total classes: {len(class_names)}")
    - Transformer 출력 중 **첫 번째 토큰(class token)**만 꺼내서 Linear로 분류
 
 이 과정을 PyTorch 코드로 하나씩 나눠서 보겠습니다.
-
 
 ```python
 import torch.nn as nn
@@ -423,7 +414,6 @@ class ViT(nn.Module):
 
 위 과정을 원하는 만큼(`num_epochs`) 반복합니다.
 
-
 ```python
 def train_model(
     model: nn.Module,
@@ -510,7 +500,6 @@ def train_model(
 
 - 기본 파라미터: $\text{num_transformer_layers} = 12$, $\text{embedding_dim} = 768$, 등
 - 에폭 수(`num_epochs`)과 학습률(`lr`)은 자유롭게 조정하세요.
-
 
 ```python
 # 클래스 개수는 pizza, steak, sushi => 3개
