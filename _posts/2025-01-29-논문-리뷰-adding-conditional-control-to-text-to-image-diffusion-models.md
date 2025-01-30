@@ -20,8 +20,8 @@ tags:
   - 머신러닝
   - 빅데이터
 categories: 
-comments: false
-published: false
+comments: true
+published: true
 ---
 ---
 
