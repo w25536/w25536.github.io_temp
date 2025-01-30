@@ -108,6 +108,7 @@ $$
 
 
 ### i) Initialised to zero
+
 $$
 \left\{\begin{array}{l}
 \mathcal{Z}\left(c ; \Theta_{\mathrm{z} 1}\right)=0 \\
@@ -116,6 +117,7 @@ $$
 \end{array}\right.
 $$
 
+Zero convolution layer의 기울기 계산을 간단히 추론해보자. 입력 $\operatorname{map} I \in \mathbb{R}^{h \times w \times c}$ 가 주어지면 임의의 공간적 위치 $p$ 와 채널별 인덱스 $i$ 에서 가중 치 $W$ 와 바이어스 $B$ 를 갖는 $1 \times 1$ convolution layer를 고려하면 forward pass는 다음과 같이 쓸 수 있다.
 
 ### ii)  Forward pass:
 
@@ -164,6 +166,10 @@ $$
 $$
 W^*=W-\beta_{\mathrm{lr}} \cdot \frac{\partial \mathcal{L}}{\partial \mathcal{Z}(I ;\{W, B\})} \odot \frac{\partial \mathcal{Z}(I ;\{W, B\})}{\partial W} \neq 0
 $$
+
+
+
+
 
 
 
