@@ -168,7 +168,7 @@ $$
 
 Zero convolution으로 인해 feature 항 $I$의 기울기가 0이 될 수 있지만 가중치와 바이어스의 기울기의 영향을 받지 않는다는 것을 알 수 있다. Feature $I$가 0이 아닌 한 가중치 $W$는 첫 번째 gradient descent iteration에서 0이 아닌 행렬로 최적화된다. 특히 feature 항은 데이터셋에서 샘플링된 입력 데이터 또는 조건 벡터이며 자연스럽게 0이 아닌 $I$를 보장한다
 
-### v) Optimization
+### v) Updateing the value $w$ consecutively without getting 0
 
 $$
 \begin{aligned} W^*=W-\beta_{\mathrm{lr}} \cdot \frac{\partial \mathcal{L}}{\partial \mathcal{Z}(I ;\{W, B\})} \odot \frac{\partial \mathcal{Z}(I ;\{W, B\})}{\partial W} \neq 0
