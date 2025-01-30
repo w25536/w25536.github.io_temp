@@ -88,7 +88,7 @@ published: true
 
 
 
-## 다음으로 식을 이해해 보자, 
+## 다음은 식을 보고 이해해 보자, 
 
 
 
@@ -103,7 +103,7 @@ $$
 $$
 
  
-- y는 weight *x+bias로 계산된다.
+- y는 $w * x + b$  계산된다.
 - 학습(Backpropagation) 시, weight와 bias 각각에 대해 편미분을 구해 업데이트한다.
 - 비록 초기 weight값이 0이라도, 입력 x가 0이 아니라면 역전파 과정을 통해 weight가 0이 아닌 값으로 학습될 수 있다.
 - 위에 식이 이러한 과정을 수식으로 보여준다.
@@ -130,6 +130,7 @@ $$
 
 ### i) Initialised to zero
 
+
 $$
 \left\{\begin{array}{l}
 \mathcal{Z}\left(c ; \Theta_{\mathrm{z} 1}\right)=0 \\
@@ -137,6 +138,7 @@ $$
 \mathcal{Z}\left(\mathcal{F}\left(x+\mathcal{Z}\left(\boldsymbol{c} ; \Theta_{\mathrm{z} 1}\right) ; \Theta_{\mathrm{c}}\right) ; \Theta_{z 2}\right)=\mathcal{Z}\left(\mathcal{F}\left(x ; \Theta_{\mathrm{c}}\right) ; \Theta_{\mathrm{z2}}\right)=\mathbf{0}
 \end{array}\right.
 $$
+
 
 Zero convolution layer의 기울기 계산을 간단히 추론해보자. 입력 $\operatorname{map} I \in \mathbb{R}^{h \times w \times c}$ 가 주어지면 임의의 공간적 위치 $p$ 와 채널별 인덱스 $i$ 에서 가중 치 $W$ 와 바이어스 $B$ 를 갖는 $1 \times 1$ convolution layer를 고려하면 forward pass는 다음과 같이 쓸 수 있다.
 
@@ -173,6 +175,7 @@ $$
 ### iii) Proof of not equal zero
 
 $$
+
 \mathcal{Z}(\boldsymbol{I} ;\{\boldsymbol{W}, \boldsymbol{B}\})_{p, i}=\boldsymbol{B}_i+\sum_j^c \boldsymbol{I}_{p, i} \boldsymbol{W}_{i, j} \quad\left\{\begin{array}{l}
 \frac{\partial \mathcal{Z}(\boldsymbol{I} ;\{\boldsymbol{W}, \boldsymbol{B}\})_{p, i}}{\partial \boldsymbol{B}_i}=1 \\
 \frac{\partial \mathcal{Z}(\boldsymbol{I} ;\{\boldsymbol{W}, \boldsymbol{B}\})_{p, i}}{\partial \boldsymbol{I}_{p, i}}=\sum_j^c \boldsymbol{W}_{i, j}=0 \\
@@ -180,13 +183,16 @@ $$
 \end{array}\right.
 $$
 
-
+Zero convolution으로 인해 feature 항 $I$의 기울기가 0이 될 수 있지만 가중치와 바이어스의 기울기의 영향을 받지 않는다는 것을 알 수 있다. Feature $I$가 0이 아닌 한 가중치 $W$는 첫 번째 gradient descent iteration에서 0이 아닌 행렬로 최적화된다. 특히 feature 항은 데이터셋에서 샘플링된 입력 데이터 또는 조건 벡터이며 자연스럽게 0이 아닌 $I$를 보장한다
 
 
 ### v) Optimization
+
 $$
-W^*=W-\beta_{\mathrm{lr}} \cdot \frac{\partial \mathcal{L}}{\partial \mathcal{Z}(I ;\{W, B\})} \odot \frac{\partial \mathcal{Z}(I ;\{W, B\})}{\partial W} \neq 0
+\begin{aligned} W^*=W-\beta_{\mathrm{lr}} \cdot \frac{\partial \mathcal{L}}{\partial \mathcal{Z}(I ;\{W, B\})} \odot \frac{\partial \mathcal{Z}(I ;\{W, B\})}{\partial W} \neq 0 
+\end{aligned}
 $$
+
 
 
 
