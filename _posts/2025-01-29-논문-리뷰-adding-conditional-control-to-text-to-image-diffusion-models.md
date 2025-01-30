@@ -114,7 +114,7 @@ $$
 y_c=\mathcal{F}(\boldsymbol{x} ; \Theta)+\mathcal{Z}\left(\mathcal{F}\left(\boldsymbol{x}+\mathcal{Z}\left(\boldsymbol{c} ; \Theta_{21}\right) ; \Theta_c\right) ; \Theta_{22}\right)
 $$
 
-- Z 함수는 ControlNet을 거쳐서 나온값이라 보면 되고
+- Z 함수는 ControlNet을 거쳐 나온 값이라고 볼 수 있으며, trainable copy는 기존의 입력 피처 맵 $X$와 해당 레이어 파라미터 $x$를 함수 $\mathcal{F}$로 표현한 뒤, 그 구조와 파라미터 $\Theta$를 동일하게 복제한 레이어를 의미한다.
 
 ## First Training Step
 
@@ -204,7 +204,6 @@ $$
 
 ## Summary 
 
-## Overview
 
 The document discusses the limitations of text-to-image models in controlling spatial composition and proposes the use of additional images for finer spatial control. It also evaluates the performance of different architectures in semantic segmentation label reconstruction.
 
@@ -213,6 +212,11 @@ The document discusses the limitations of text-to-image models in controlling sp
 - Text-to-image models struggle with expressing complex layouts, poses, shapes, and forms through text prompts alone.
 - Additional images like edge maps, human pose skeletons, etc., can enhance spatial control in image generation.
 - Evaluation of semantic segmentation label reconstruction is done with different architectures, showing varying performance leve
+
+
+
+
+2025-01-30 작성자 서정호
 
 <style type="text/css">
 code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
