@@ -36,13 +36,23 @@ published: true
 
 
 
-![](https://cdn.mathpix.com/snip/images/VoYPN658c6bfbc-MWSrbW9Y-vBzRtfQOaa-LmB7KdLc.original.fullsize.png)
+
+
+<p align="center">
+  <img src="https://cdn.mathpix.com/snip/images/VoYPN658c6bfbc-MWSrbW9Y-vBzRtfQOaa-LmB7KdLc.original.fullsize.png" align="center" width="80%">
+</p>
+
 
 -  이 모델은 한마디로 위 그림과 같이 x의 특성(feature)을 입력받아 y라는 출력값을 생성할 때, ControlNet 모듈의 조건(condition) c를 추가로 고려하여 최종 y 값을 도출한다고 보면 된다. 
 
 
-![](https://cdn.mathpix.com/snip/images/2iNLaVfzFVsBGPqYS-NgQp6GYM7n2VpgYNNjT4v2qAU.original.fullsize.png)
 
+
+
+
+<p align="center">
+  <img src="https://cdn.mathpix.com/snip/images/2iNLaVfzFVsBGPqYS-NgQp6GYM7n2VpgYNNjT4v2qAU.original.fullsize.png" align="center" width="80%">
+</p>
 
 - 위 이미지를 좀 더 구체적으로 이해해보면 "pretrained large diffusion models"을 가져와 활용
 - 학습 시에는 기존 large 모델의 장점을 최대한 살리기 위해 frozen 상태로 유지하고,
@@ -60,10 +70,16 @@ published: true
 - Zero Convolution Layer는 1×1 컨볼루션 레이어로서, weight와 bias를 모두 0으로 초기화한다. 이렇게 하면 초기 단계에서는 출력에 영향을 주지 않다가, 학습을 통해 점차 필요한 파라미터 값이 최적화되어 원하는 정보를 학습할 수 있게 된다. 이렇게 하는 이유는  아래 이미지를 참고하면 된다
 
 
-![](https://cdn.mathpix.com/snip/images/48hMZkKzpNTRI-p5QMDH1s6gPNbupxDRMJr0a940aqE.original.fullsize.png)
+
+<p align="center">
+  <img src="https://cdn.mathpix.com/snip/images/48hMZkKzpNTRI-p5QMDH1s6gPNbupxDRMJr0a940aqE.original.fullsize.png" align="center" width="80%">
+</p>
 
 
-![](https://cdn.mathpix.com/snip/images/AELbV6cfab3P5IsRuAgEwCEcWc5o17VRhw3qpQHKogM.original.fullsize.png)
+
+<p align="center">
+  <img src="https://cdn.mathpix.com/snip/images/AELbV6cfab3P5IsRuAgEwCEcWc5o17VRhw3qpQHKogM.original.fullsize.png" align="center" width="80%">
+</p>
 
 
 위 내용을 요약하자면 
@@ -75,9 +91,12 @@ published: true
 ## 다음으로 식을 이해해 보자, 
 
 
-![](https://cdn.mathpix.com/snip/images/17_LDq4pTZ2fpfQ9pDBy_g9RkQBLTXSP_ovGyEN1Fi4.original.fullsize.png)
 
 
+
+<p align="center">
+  <img src="https://cdn.mathpix.com/snip/images/QTON_AlO7DZSwYEf-jhaOc1sX-6WmXrA4qCdjB2TwAs.original.fullsize.png" align="center" width="80%">
+</p>
 
 $$ 
 \begin{aligned}&y=w x+b\\&\partial y / \partial w=x, \partial y / \partial x=w, \partial y / \partial b=1\\&\text { if } w=0 \text { and } x \neq 0\\& \partial y / \partial w \neq 0, \partial y / \partial x=0, \partial y / \partial b \neq 0\end{aligned}
@@ -93,8 +112,10 @@ $$
 
 
 
-![](https://cdn.mathpix.com/snip/images/QTON_AlO7DZSwYEf-jhaOc1sX-6WmXrA4qCdjB2TwAs.original.fullsize.png )
 
+<p align="center">
+  <img src="https://cdn.mathpix.com/snip/images/QTON_AlO7DZSwYEf-jhaOc1sX-6WmXrA4qCdjB2TwAs.original.fullsize.png" align="center" width="80%">
+</p>
 
 
 
