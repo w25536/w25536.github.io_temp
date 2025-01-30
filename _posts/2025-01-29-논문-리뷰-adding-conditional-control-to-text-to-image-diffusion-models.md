@@ -102,6 +102,10 @@ $$
 - 비록 초기 weight값이 0이라도, 입력 x가 0이 아니라면 역전파 과정을 통해 weight가 0이 아닌 값으로 학습될 수 있다.
 - 위에 식이 이러한 과정을 수식으로 보여준다.
 
+
+
+---
+
 <p align="center">
   <img src="https://cdn.mathpix.com/snip/images/QTON_AlO7DZSwYEf-jhaOc1sX-6WmXrA4qCdjB2TwAs.original.fullsize.png" align="center" width="80%">
 </p>
@@ -181,6 +185,34 @@ $$
 - First Training Step : 초기 가중치가 0이므로, 처음에는 출력에 영향을 주지 못한다(출력이 거의 0에 가까움).
 - Backpropagation 과정: 학습 과정에서 가중치가 0이더라도, 입력값(x)이 0이 아닌 경우엔 편미분 값이 0이 아니게 된다.
 - 따라서 다음 스텝에서 weight는 0이 아닌 값으로 업데이트되어, 점차 학습이 진행된다.
+
+
+
+## ControlNet 계요
+
+
+**Locking Parameters:** ControlNet locks the parameters of a large pretrained model to preserve its quality and capabilities.
+
+**Trainable Copy:** It creates a trainable copy of the encoding layers of the large model to learn diverse conditional controls.
+
+**Zero Convolutions:** ControlNet uses "zero convolutions" to progressively grow parameters from zero, ensuring no harmful noise affects the finetuning process.
+
+**Conditional Controls:** By connecting with zero convolutions, ControlNet can handle various conditioning inputs like edges, depth, segmentation, human pose, etc.
+
+**Efficient Training:** The architecture of ControlNet speeds up training and saves GPU memory by freezing the locked copy parameters, eliminating the need for gradient computation in the locked encoder.
+
+
+## Summary 
+
+## Overview
+
+The document discusses the limitations of text-to-image models in controlling spatial composition and proposes the use of additional images for finer spatial control. It also evaluates the performance of different architectures in semantic segmentation label reconstruction.
+
+### Key points
+
+- Text-to-image models struggle with expressing complex layouts, poses, shapes, and forms through text prompts alone.
+- Additional images like edge maps, human pose skeletons, etc., can enhance spatial control in image generation.
+- Evaluation of semantic segmentation label reconstruction is done with different architectures, showing varying performance leve
 
 <style type="text/css">
 code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
