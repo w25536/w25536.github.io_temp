@@ -1,3 +1,4 @@
 User-agent: *
-Allow:/
-Sitemap: http://w25536.github.io/sitemap.xml
+Allow: /
+
+Sitemap: https://kimjy99.github.io/sitemap.xml
