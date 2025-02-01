@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "[팀프로젝트] Wall Segmentation Mask 시각화 및 코드 구현"
+title: "[팀프로젝트] Wall Segmentation Mask 코드 구현 및 테스팅"
 description: ""
 headline: ""
 tags:
@@ -11,7 +11,7 @@ tags:
   - 전처리
   - science
   - 딥러닝
-categories: deep-learning
+categories: skt-team-project
 comments: true
 published: true
 ---
@@ -22,7 +22,9 @@ published: true
 
 - [Getting Started with Wall Segmentation](https://www.researchgate.net/publication/363059238_Getting_Started_with_Wall_Segmentation)
 - [Wall segmentation in 2D images using convolutional neural networks](https://www.researchgate.net/publication/373861585_Wall_segmentation_in_2D_images_using_convolutional_neural_networks)
-- https://arxiv.org/pdf/1612.01105
+
+구현은 아래의 논문을 참고 했다고 한다:
+- [Pyramid Scene Parsing Network](https://arxiv.org/abs/1612.01105).
 
 Segmentation architecture :
 
