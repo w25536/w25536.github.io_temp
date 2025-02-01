@@ -16,7 +16,7 @@ comments: true
 published: true
 ---
 
- Wall Segmentation 실행 결과 정리 
+# Wall Segmentation 실험
 
 
 아래의 논문을 참고함 :
@@ -90,7 +90,7 @@ Transfer learing - entire decoder
 
 
     
-![png](../images/2025-02-01/testing_4_1.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_1.png)
     
 
 
@@ -102,7 +102,7 @@ Transfer learing - entire decoder
 
 
     
-![png](../images/2025-02-01/testing_4_3.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_3.png)
     
 
 
@@ -114,7 +114,7 @@ Transfer learing - entire decoder
 
 
     
-![png](../images/2025-02-01/testing_4_5.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_5.png)
     
 
 
@@ -126,7 +126,7 @@ Transfer learing - entire decoder
 
 
     
-![png](../images/2025-02-01/testing_4_7.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_7.png)
     
 
 
@@ -138,7 +138,7 @@ Transfer learing - entire decoder
 
 
     
-![png](../images/2025-02-01/testing_4_9.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_9.png)
     
 
 
@@ -150,7 +150,7 @@ Transfer learing - entire decoder
 
 
     
-![png](../images/2025-02-01/testing_4_11.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_11.png)
     
 
 
@@ -162,7 +162,7 @@ Transfer learing - entire decoder
 
 
     
-![png](../images/2025-02-01/testing_4_13.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_13.png)
     
 
 
@@ -174,7 +174,7 @@ Transfer learing - entire decoder
 
 
     
-![png](../images/2025-02-01/testing_4_15.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_15.png)
     
 
 
@@ -186,8 +186,7 @@ Transfer learing - entire decoder
 
 
     
-![png](../images/2025-02-01/testing_4_17.png)
-
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_17.png)
 
 
 
