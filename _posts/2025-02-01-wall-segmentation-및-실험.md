@@ -24,10 +24,9 @@ published: true
 - [Wall segmentation in 2D images using convolutional neural networks](https://www.researchgate.net/publication/373861585_Wall_segmentation_in_2D_images_using_convolutional_neural_networks)
 - [Pyramid Scene Parsing Network](https://arxiv.org/abs/1612.01105).
 
-## Segmentation architecture :
+### Segmentation architecture :
 
 Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
-
 
 
 ## 데이터셋
