@@ -88,6 +88,8 @@ Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
 기존에 학습된 모델들 중에서는 육안으로는 learning entire encoder & decoder 가장 좋았고 추가적으로 Without transfer learning 결과도 나쁘지 않게 나옴 
 
 
+참고: 색깔 보라색이 벽이 발견된 마스크 구간이다
+
 
 
     6.jpeg
