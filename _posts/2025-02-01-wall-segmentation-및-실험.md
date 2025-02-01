@@ -18,21 +18,16 @@ published: true
 
 팀프로젝트  프로젝트 결과 및 추후 방향 수립 
 
-아래의 논문을 참고함 :
+### 아래의 논문을 참고함 :
 
 - [Getting Started with Wall Segmentation](https://www.researchgate.net/publication/363059238_Getting_Started_with_Wall_Segmentation)
 - [Wall segmentation in 2D images using convolutional neural networks](https://www.researchgate.net/publication/373861585_Wall_segmentation_in_2D_images_using_convolutional_neural_networks)
-
-구현은 아래의 논문을 참고 했다고 한다:
 - [Pyramid Scene Parsing Network](https://arxiv.org/abs/1612.01105).
 
-Segmentation architecture :
+## Segmentation architecture :
 
 Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
 
-
-
-## 실험 환경
 
 
 ## 데이터셋
