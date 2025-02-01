@@ -16,7 +16,7 @@ comments: true
 published: true
 ---
 
-# Wall Segmentation 실험
+ Wall Segmentation 실행 결과 정리 
 
 
 아래의 논문을 참고함 :
