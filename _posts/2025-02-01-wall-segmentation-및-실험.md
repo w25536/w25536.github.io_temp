@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Wall Segmentation 테스팅 결과 및 추후 방향
+title: "[팀프로젝트] Wall Segmentation Mask 시각화 및 코드 구현"
 description: ""
 headline: ""
 tags:
@@ -16,8 +16,7 @@ comments: true
 published: true
 ---
 
-# Wall Segmentation 실험
-
+팀프로젝트  프로젝트 결과 및 추후 방향 수립 
 
 아래의 논문을 참고함 :
 
