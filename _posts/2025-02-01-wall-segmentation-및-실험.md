@@ -108,7 +108,7 @@ Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
 
 
     
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_3.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_2.png)
     
 
 
@@ -120,7 +120,7 @@ Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
 
 
     
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_5.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_3.png)
     
 
 
@@ -132,7 +132,7 @@ Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
 
 
     
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_7.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_4.png)
     
 
 
@@ -144,7 +144,7 @@ Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
 
 
     
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_9.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_5.png)
     
 
 
@@ -156,7 +156,7 @@ Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
 
 
     
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_11.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_6.png)
     
 
 
@@ -168,7 +168,7 @@ Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
 
 
     
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_13.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_7.png)
     
 
 
@@ -180,7 +180,7 @@ Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
 
 
     
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_15.png)
+![png]({{site.baseurl}}/images/2025-02-01/testing_4_8.png)
     
 
 
