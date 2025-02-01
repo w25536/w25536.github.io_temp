@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Wall Segmentation 및 실험
+title: Wall Segmentation 테스팅 결과 및 추후 방향
 description: ""
 headline: ""
 tags:
