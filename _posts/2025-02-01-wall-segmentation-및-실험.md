@@ -78,123 +78,105 @@ Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
 | Model Type                              | Encoder Weights           | Decoder Weights           | 결과  |
 | --------------------------------------- | ------------------------- | ------------------------- | --- |
 | Pre-trained model on 150 classes        | encoder_epoch_20.pth      | decoder_epoch_20.pth      |     |
-| Transfer learning - entire decoder      | transfer_encoder.pth      | transfer_decoder.pth      | ⭐⭐  |
+| Transfer learning - entire decoder      | transfer_encoder.pth      | transfer_decoder.pth      | ⭐⭐⭐ |
 | Transfer learning - last layer          | Output_only_encoder.pth   | Output_only_decoder.pth   | ⭐   |
 | Transfer learning - ResNet101           | best_encoder_epoch_18.pth | best_decoder_epoch_18.pth | ⭐   |
-| Without transfer learning               | best_encoder_epoch_19.pth | best_decoder_epoch_19.pth | ⭐⭐⭐ |
+| Without transfer learning               | best_encoder_epoch_19.pth | best_decoder_epoch_19.pth | ⭐⭐  |
 | Without transfer learning - old weights | wall_encoder_epoch_20.pth | wall_decoder_epoch_20.pth | ⭐⭐  |
 
 
-기존에 학습된 모델들 중에서는 육안으로는 Without transfer learning 가장 좋았고 추가적으로 Transfer learning entire encoder & decoder 결과도 나쁘지 않게 나옴 
+기존에 학습된 모델들 중에서는 육안으로는 learning entire encoder & decoder 가장 좋았고 추가적으로 Without transfer learning 결과도 나쁘지 않게 나옴 
+
+
 
 
     6.jpeg
     Building encoder: resnet50-dilated
     Loading weights for net_encoder
     Loading weights for net_decoder
-
-
-
-    
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_1.png)
-    
-
-
     7.jpeg
     Building encoder: resnet50-dilated
     Loading weights for net_encoder
     Loading weights for net_decoder
-
-
-
-    
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_2.png)
-    
-
-
     8.jpeg
     Building encoder: resnet50-dilated
     Loading weights for net_encoder
     Loading weights for net_decoder
-
-
-
-    
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_3.png)
-    
-
-
     5.jpeg
     Building encoder: resnet50-dilated
     Loading weights for net_encoder
     Loading weights for net_decoder
-
-
-
-    
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_4.png)
-    
-
-
     9.jpeg
     Building encoder: resnet50-dilated
     Loading weights for net_encoder
     Loading weights for net_decoder
-
-
-
-    
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_5.png)
-    
-
-
     4.jpg
     Building encoder: resnet50-dilated
     Loading weights for net_encoder
     Loading weights for net_decoder
-
-
-
-    
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_6.png)
-    
-
-
     2.jpg
     Building encoder: resnet50-dilated
     Loading weights for net_encoder
     Loading weights for net_decoder
-
-
-
-    
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_7.png)
-    
-
-
     1.jpg
     Building encoder: resnet50-dilated
     Loading weights for net_encoder
     Loading weights for net_decoder
-
-
-
-    
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_8.png)
-    
-
-
     3.jpeg
     Building encoder: resnet50-dilated
     Loading weights for net_encoder
     Loading weights for net_decoder
 
 
+    
+![png]({{site.baseurl}}/images/testing_files/testing_4_1.png)
+    
+
+
 
     
-![png]({{site.baseurl}}/images/2025-02-01/testing_4_17.png)
+![png]({{site.baseurl}}/images/testing_files/testing_4_2.png)
+    
 
 
+
+    
+![png]({{site.baseurl}}/images/testing_files/testing_4_3.png)
+    
+
+
+
+    
+![png]({{site.baseurl}}/images/testing_files/testing_4_4.png)
+    
+
+
+
+    
+![png]({{site.baseurl}}/images/testing_files/testing_4_5.png)
+    
+
+
+    
+![png]({{site.baseurl}}/images/testing_files/testing_4_6.png)
+    
+
+
+
+    
+![png]({{site.baseurl}}/images/testing_files/testing_4_7.png)
+    
+
+
+
+    
+![png]({{site.baseurl}}/images/testing_files/testing_4_8.png)
+    
+
+
+
+    
+![png]({{site.baseurl}}/images/testing_files/testing_4_9.png)
 
 
 ## 향후 실험 계획
