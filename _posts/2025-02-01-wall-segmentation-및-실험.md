@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "[팀프로젝트] Wall Segmentation Mask 코드 구현 및 테스팅"
+title: "[팀프로젝트] Wall Segmentation 코드 구현 및 테스팅"
 description: ""
 headline: ""
 tags:
@@ -88,7 +88,6 @@ Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
 기존에 학습된 모델들 중에서는 육안으로는 learning entire encoder & decoder 가장 좋았고 추가적으로 Without transfer learning 결과도 나쁘지 않게 나옴 
 
 
-참고: 색깔 보라색이 벽이 발견된 마스크 구간이다
 
 
 
@@ -129,7 +128,7 @@ Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
     Loading weights for net_encoder
     Loading weights for net_decoder
 
-
+ 보라색 부분이 벽이 발견된 마스크 구간 결과는 아래와 같다 
     
 ![png]({{site.baseurl}}/images/2025-02-01/testing_4_1.png)
     
