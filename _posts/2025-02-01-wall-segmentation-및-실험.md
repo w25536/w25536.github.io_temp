@@ -79,8 +79,19 @@ Segmentation 모델의 구조는 크게 Encoder와 Decoder로 구성
 
 ## 결과 요약
 
-Transfer learing - entire decoder 
+다음과 같은 모델들을 실행해보고 성능 평가를 진행함. 
 
+| Model Type                              | Encoder Weights           | Decoder Weights           | 결과  |
+| --------------------------------------- | ------------------------- | ------------------------- | --- |
+| Pre-trained model on 150 classes        | encoder_epoch_20.pth      | decoder_epoch_20.pth      |     |
+| Transfer learning - entire decoder      | transfer_encoder.pth      | transfer_decoder.pth      | ⭐⭐  |
+| Transfer learning - last layer          | Output_only_encoder.pth   | Output_only_decoder.pth   | ⭐   |
+| Transfer learning - ResNet101           | best_encoder_epoch_18.pth | best_decoder_epoch_18.pth | ⭐   |
+| Without transfer learning               | best_encoder_epoch_19.pth | best_decoder_epoch_19.pth | ⭐⭐⭐ |
+| Without transfer learning - old weights | wall_encoder_epoch_20.pth | wall_decoder_epoch_20.pth | ⭐⭐  |
+
+
+기존에 학습된 모델들 중에서는 육안으로는 Without transfer learning 가장 좋았고 추가적으로 Transfer learning entire encoder & decoder 결과도 나쁘지 않게 나옴 
 
 
     6.jpeg
@@ -192,8 +203,17 @@ Transfer learing - entire decoder
 
 
 
-## 다음 실험 계획
+## 향후 실험 계획
 
-1. 세크멘테이션 고도화 
-2. OpenCV를 이용하여 처리된 결과의 wall segmentation을 고도화 시키기
+1. 모델 재학습
+   - train_script.py를 활용한 모델 재학습 수행
+   - 학습 파라미터 최적화 실험
+
+2. 후처리 고도화
+   - OpenCV 기반 wall segmentation 결과 후처리
+   - 노이즈 제거 및 경계선 개선
+   
+3. 모델 비교 연구
+   - 다양한 segmentation 모델 벤치마킹
+   - 성능 비교 분석을 통한 최적 모델 선정
 
