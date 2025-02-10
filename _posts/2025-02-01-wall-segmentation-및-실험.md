@@ -17,7 +17,7 @@ published: true
 ---
 
 팀프로젝트  프로젝트 결과 및 추후 방향 수립 
-
+![Proposed structure of the used semantic segmentation model, with the Pyramid Pooling Module. Photo credit: Goran Kvascev. Full-size  DOI: 10.7717/peerj-cs.1565/fig-4](https://www.researchgate.net/profile/Mihailo-Bjekic/publication/373861585/figure/fig4/AS:11431281192951759@1695809707374/Proposed-structure-of-the-used-semantic-segmentation-model-with-the-Pyramid-Pooling.ppm)
 ### 아래의 논문을 참고함 :
 
 - [Getting Started with Wall Segmentation](https://www.researchgate.net/publication/363059238_Getting_Started_with_Wall_Segmentation)
