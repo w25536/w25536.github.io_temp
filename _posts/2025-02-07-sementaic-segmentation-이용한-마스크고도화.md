@@ -12,6 +12,7 @@ comments: true
 published: true
 ---
 
+Semantic segmentation
 
 ![](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/segformer_architecture.png)
 
