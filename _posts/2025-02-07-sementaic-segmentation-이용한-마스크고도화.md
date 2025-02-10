@@ -1,6 +1,6 @@
 ---
 layout: page
-title: sementaic segmentation 이용한 마스크도화
+title: "[팀프로잭트] sementaic segmentation 이용한 마스크 고도화"
 description: ""
 headline: ""
 tags:
