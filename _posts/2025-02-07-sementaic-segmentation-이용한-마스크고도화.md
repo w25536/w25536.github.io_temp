@@ -191,7 +191,7 @@ apparel: 230 pixels
 
 
 
-![[{{site.baseurl}}/images/2025-02-07/output2.png]]
+![]({{site.baseurl}}/images/2025-02-07/output2.png)
 
 ```bash
 light: 29534 pixels 
@@ -205,7 +205,7 @@ plate: 4009 pixels
 
 
 
-![[{{site.baseurl}}/images/2025-02-07/모든_segmentation_결과.png]]
+![]{{site.baseurl}}/images/2025-02-07/모든_segmentation_결과.png)
 
 
 - 실험 결과 분석에 따르면, 일반적인 내부 벽면에 대한 인식 성능은 매우 우수 하지만 
@@ -218,12 +218,12 @@ plate: 4009 pixels
 
 - 먼저 아래의 그림을 보자 
 
-![[{{site.baseurl}}/images/2025-02-07/output333.png]]
+![]({{site.baseurl}}/images/2025-02-07/output333.png)
 
 - 아래 마스크의 벽이인식이 잘되지 않은것을 확인 할 수 있다. 
 
 
-![[{{site.baseurl}}/images/2025-02-07/outpu123123t.png]]
+![]({{site.baseurl}}/images/2025-02-07/outpu123123t.png)
 
 ```bash
 
@@ -244,10 +244,10 @@ earth: 47652 pixels
 이러한 방법을 통해 벽화가 포함된 건물 영역에 대한 보다 정확한 segmentation이 가능해졌다.
 
 
-![[{{site.baseurl}}/images/2025-02-07/output123132.png]]
+![]({{site.baseurl}}/images/2025-02-07/output123132.png)
 
 ---
-###
+### 정리 
 
 - 실험에서는 **세 가지 공개 데이터셋**, 즉 Cityscapes, ADE20K, COCO-Stuff를 사용했다. 
 - ADE20K 데이터셋은 **150개의 세부적인 의미론적 개념**을 포함하여, 총 20,210장의 이미지를 포함한다.
@@ -265,7 +265,7 @@ earth: 47652 pixels
 - SegFormer는 **로버스트니스** 측면에서도 뛰어난 성능을 보이며, Gaussian Noise에 대해 588% 개선된 결과를 나타내고, 눈 날씨 관련 테스트에 대해서는 295% 개선을 기록했다.
 - 아래 이미지를 보면 확인 할 수 있다. 
 
-![[{{site.baseurl}}/images/2025-02-07/CleanShot 2025-02-10 at 19.40.37@2x.png]]
+![]({{site.baseurl}}/images/2025-02-07/CleanShot 2025-02-10 at 19.40.37@2x.png)
 
 
 이번 프로잭트에 SegFormer를 사용되는 이유는 다음과 같다 
