@@ -180,7 +180,7 @@ print("Unique values in binary mask:", np.unique(binary_mask))
 
 
 
-![[output 1.png]]
+![]({{site.baseurl}}/images/2025-02-07/output 1.png)
 
 
 ```bash
@@ -191,7 +191,7 @@ apparel: 230 pixels
 
 
 
-![[output2.png]]
+![[{{site.baseurl}}/images/2025-02-07/output2.png]]
 
 ```bash
 light: 29534 pixels 
@@ -205,7 +205,7 @@ plate: 4009 pixels
 
 
 
-![[모든_segmentation_결과.png]]
+![[{{site.baseurl}}/images/2025-02-07/모든_segmentation_결과.png]]
 
 
 - 실험 결과 분석에 따르면, 일반적인 내부 벽면에 대한 인식 성능은 매우 우수 하지만 
@@ -218,12 +218,12 @@ plate: 4009 pixels
 
 - 먼저 아래의 그림을 보자 
 
-![[output333.png]]
+![[{{site.baseurl}}/images/2025-02-07/output333.png]]
 
 - 아래 마스크의 벽이인식이 잘되지 않은것을 확인 할 수 있다. 
 
 
-![[outpu123123t.png]]
+![[{{site.baseurl}}/images/2025-02-07/outpu123123t.png]]
 
 ```bash
 
@@ -244,7 +244,7 @@ earth: 47652 pixels
 이러한 방법을 통해 벽화가 포함된 건물 영역에 대한 보다 정확한 segmentation이 가능해졌다.
 
 
-![[output123132.png]]
+![[{{site.baseurl}}/images/2025-02-07/output123132.png]]
 
 ---
 ###
@@ -255,7 +255,7 @@ earth: 47652 pixels
 - COCO-Stuff는 **172개의 레이블**로 164,000개의 이미지로 구성되며, 훈련용, 검증용, 테스트용 이미지가 포함되어 있다
 
 
-![[CleanShot 2025-02-10 at 19.43.49@2x.png]]
+![[{{site.baseurl}}/images/2025-02-07/CleanShot 2025-02-10 at 19.43.49@2x.png]]
 
 
 - SegFormer encoder는 **로컬** 및 **비로컬** 피처를 결합하는 것이 필요하며, 단순히 고수준 피처에만 의존해서는 안 된다.
@@ -265,7 +265,7 @@ earth: 47652 pixels
 - SegFormer는 **로버스트니스** 측면에서도 뛰어난 성능을 보이며, Gaussian Noise에 대해 588% 개선된 결과를 나타내고, 눈 날씨 관련 테스트에 대해서는 295% 개선을 기록했다.
 - 아래 이미지를 보면 확인 할 수 있다. 
 
-![[CleanShot 2025-02-10 at 19.40.37@2x.png]]
+![[{{site.baseurl}}/images/2025-02-07/CleanShot 2025-02-10 at 19.40.37@2x.png]]
 
 
 이번 프로잭트에 SegFormer를 사용되는 이유는 다음과 같다 
