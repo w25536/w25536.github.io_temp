@@ -17,7 +17,7 @@ Semantic segmentation
 ![](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/segformer_architecture.png)
 
 
-![]({site.baseurl}}/images/2025-02-07/CleanShot 2025-02-10 at 19.45.39@2x.png | 500])
+![]({{site.baseurl}}/images/2025-02-07/CleanShot 2025-02-10 at 19.45.39@2x.png | 500])
 
 $### SegFormer 모델 개요
 
@@ -256,7 +256,7 @@ earth: 47652 pixels
 - COCO-Stuff는 **172개의 레이블**로 164,000개의 이미지로 구성되며, 훈련용, 검증용, 테스트용 이미지가 포함되어 있다
 
 
-![[{{site.baseurl}}/images/2025-02-07/CleanShot 2025-02-10 at 19.43.49@2x.png]]
+![]({{site.baseurl}}/images/2025-02-07/CleanShot 2025-02-10 at 19.43.49@2x.png)
 
 
 - SegFormer encoder는 **로컬** 및 **비로컬** 피처를 결합하는 것이 필요하며, 단순히 고수준 피처에만 의존해서는 안 된다.
