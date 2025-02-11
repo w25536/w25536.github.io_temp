@@ -17,7 +17,8 @@ Semantic segmentation
 ![](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/segformer_architecture.png)
 
 
-![[CleanShot 2025-02-10 at 19.45.39@2x.png | 500]]
+![]({site.baseurl}}/images/2025-02-07/CleanShot 2025-02-10 at 19.45.39@2x.png | 500])
+
 $### SegFormer 모델 개요
 
 - SegFormer모델은, Transformers와 경량 MLP 디코더를 결합하여 이미지 분할에서 뛰어난 성능을 보임.
@@ -205,7 +206,7 @@ plate: 4009 pixels
 
 
 
-![]{{site.baseurl}}/images/2025-02-07/모든_segmentation_결과.png)
+![]({site.baseurl}}/images/2025-02-07/모든_segmentation_결과.png)
 
 
 - 실험 결과 분석에 따르면, 일반적인 내부 벽면에 대한 인식 성능은 매우 우수 하지만 
