@@ -17,7 +17,7 @@ Semantic segmentation
 ![](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/segformer_architecture.png)
 
 
-![]({{site.baseurl}}/images/2025-02-07/CleanShot 2025-02-10 at 19.45.39@2x.png)
+
 
 ### SegFormer 모델 개요
 
@@ -29,6 +29,7 @@ Semantic segmentation
 - SegFormer는 SegFormer-B0에서 SegFormer-B5까지의 모델 시리즈로 확장 가능하며, 이전 모델들보다 성능과 효율성이 크게 향상됨
 - ==예를 들어, SegFormer-B4는 64M 파라미터로 ADE20K에서 50.3% mIoU를 달성하며, 이전 최상의 방법보다 5배 작고 2.2% 더 나은 성능을 보임.==
 
+![]({{site.baseurl}}/images/2025-02-07/CleanShot 2025-02-10 at 19.45.39@2x.png)
 
 ### SegFormer 모델 설명
 
@@ -204,9 +205,7 @@ plate: 4009 pixels
 
 아래는 다양한 벽에 대한 테스팅을 진행해 보았고 다음과 같은 결과를 얻을 수 있었다. 
 
-
-
-![]({site.baseurl}}/images/2025-02-07/모든_segmentation_결과.png)
+![]({{site.baseurl}}/images/2025-02-07/모든_segmentation_결과.png)
 
 
 - 실험 결과 분석에 따르면, 일반적인 내부 벽면에 대한 인식 성능은 매우 우수 하지만 
