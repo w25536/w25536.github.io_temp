@@ -17,7 +17,7 @@ Semantic segmentation
 ![](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/segformer_architecture.png)
 
 
-![]({{site.baseurl}}/images/2025-02-07/CleanShot 2025-02-10 at 19.45.39@2x.png | 500])
+![]({{site.baseurl}}/images/2025-02-07/CleanShot 2025-02-10 at 19.45.39@2x.png)
 
 $### SegFormer 모델 개요
 
